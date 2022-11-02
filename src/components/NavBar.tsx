@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import BrandLogo from 'src/components/brand/BrandLogo';
 import CollapsedMenu from 'src/components/NavItems/CollapsedMenu';
@@ -19,13 +20,13 @@ export const NavBar = () => {
 					</ul>
 					<ul className='flex items-center hidden space-x-8 lg:flex'>
 						<li>
-							<a
+							<Link
 								href='/'
 								className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
 								aria-label='Sign up'
 								title='Sign up'>
 								Sign up
-							</a>
+							</Link>
 						</li>
 					</ul>
 					<div className='lg:hidden'>

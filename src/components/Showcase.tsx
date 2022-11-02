@@ -1,13 +1,17 @@
 import { FaRegStar, FaHammer, FaMoneyBill } from 'react-icons/fa';
 
 import Image from 'next/legacy/image';
+import ResponsiveImage from 'src/components/essential/ResponsiveImage';
+
+import laptopImg from 'public/laptop.png';
 
 const HDivider = () => <div className='w-[2px] bg-gray-300'>&nbsp;</div>;
 
 const ProductImage = () => (
 	<div className='relative flex-1'>
 		<FaRegStar className='absolute top-4 right-4' />
-		<Image src='/laptop.png' alt='Laptop' layout='fill' />
+		{/* <ResponsiveImage src='/laptop.png' /> */}
+		<Image src={laptopImg} alt='Laptop' layout='responsive' objectFit='cover' />
 	</div>
 );
 const DescriptionSection = () => (
@@ -15,7 +19,7 @@ const DescriptionSection = () => (
 		{/* Title Area */}
 		<div className='p-3'>
 			{/* name */}
-			<h2 className='text-2xl font-semibold my-4'>Toyota balalaalaa</h2>
+			<h2 className='my-4 text-2xl font-semibold'>Toyota balalaalaa</h2>
 			<div className='flex'>
 				<p className='flex-1'>
 					<strong className='font-semibold'>Listing ID</strong> : 1554200
@@ -58,7 +62,7 @@ const DescriptionSection = () => (
 				Total Bids : <span className='text-green-500'>97 Bids</span>
 			</p>
 			<HDivider></HDivider>
-			<p className='px-4 flex-1'>
+			<p className='flex-1 px-4'>
 				Last Bid : <span className='text-green-500'>7 mins ago</span>
 			</p>
 		</div>
@@ -66,18 +70,14 @@ const DescriptionSection = () => (
 );
 const SubmitSection = () => {
 	return (
-		<div className='flex-1 text-center bg-slate-100 rounded-lg py-5'>
-			<p className='text-accent font-semibold'>Bidding ends in</p>
-			<p className='text-red-400 tracking-wide'>0d : 19h : 8m : 52s</p>
+		<div className='flex-1 py-5 text-center rounded-lg bg-slate-100'>
+			<p className='font-semibold text-accent'>Bidding ends in</p>
+			<p className='tracking-wide text-red-400'>0d : 19h : 8m : 52s</p>
 			<div className='px-6 py-5'>
 				<p className='font-thin'>Bid Increment</p>
-				<h3 className='text-3xl font-bold mt-3'>$3</h3>
+				<h3 className='mt-3 text-3xl font-bold'>$3</h3>
 			</div>
-			<button
-				className='rounded-full px-7 py-4 
-			bg-purple-600 text-white bg-gradient-to-b 
-			from-blue-700 to-blue-400 hover:from-blue-400 hover:to-blue-700 
-			shadow-lg shadow-blue-800 font-semibold'>
+			<button className='py-4 font-semibold text-white bg-purple-600 rounded-full shadow-lg px-7 bg-gradient-to-b from-blue-700 to-blue-400 hover:from-blue-400 hover:to-blue-700 shadow-blue-800'>
 				Submit a bid
 			</button>
 		</div>
@@ -86,7 +86,7 @@ const SubmitSection = () => {
 
 const Showcase = () => {
 	return (
-		<div className='flex text-black shadow-lg rounded-lg p-2 gap-4'>
+		<div className='flex flex-col gap-4 p-2 text-black rounded-lg shadow-lg md:flex-row'>
 			<ProductImage />
 			<DescriptionSection />
 			<SubmitSection />

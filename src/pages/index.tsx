@@ -22,6 +22,11 @@ const Home: NextPage = () => {
 			<div className='w-2/3 mx-auto mb-10'>
 				<Showcase />
 			</div>
+
+			<div className='flex'>
+				<div></div>
+				<div></div>
+			</div>
 		</>
 	);
 };
