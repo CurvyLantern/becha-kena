@@ -1,15 +1,14 @@
-import { FaRegStar, FaHammer, FaMoneyBill } from 'react-icons/fa';
+import { FaHammer, FaMoneyBill, FaRegStar } from 'react-icons/fa';
 
 import Image from 'next/legacy/image';
-import ResponsiveImage from 'src/components/essential/ResponsiveImage';
+import Separator from 'src/components/ui/Seperator';
 
 import laptopImg from 'public/laptop.png';
 
-const HDivider = () => <div className='w-[2px] bg-gray-300'>&nbsp;</div>;
 
 const ProductImage = () => (
 	<div className='relative flex-1'>
-		<FaRegStar className='absolute top-4 right-4' />
+		<FaRegStar className='top-4 right-4 absolute' />
 		{/* <ResponsiveImage src='/laptop.png' /> */}
 		<Image src={laptopImg} alt='Laptop' layout='responsive' objectFit='cover' />
 	</div>
@@ -24,7 +23,7 @@ const DescriptionSection = () => (
 				<p className='flex-1'>
 					<strong className='font-semibold'>Listing ID</strong> : 1554200
 				</p>
-				<HDivider />
+				<Separator orientation='vertical' />
 				<p className='flex-1 px-4'>
 					<strong className='font-semibold'>Item #</strong> : 09999-222222
 				</p>
@@ -32,7 +31,7 @@ const DescriptionSection = () => (
 		</div>
 
 		{/* Bid Area */}
-		<div className='flex p-3 border-dotted border-y-2'>
+		<div className='border-y-2 flex p-3 border-dotted'>
 			<div className='flex flex-1 gap-5'>
 				{/* icon */}
 				<div className='text-green-500'>
@@ -43,7 +42,7 @@ const DescriptionSection = () => (
 					<p>$876.00</p>
 				</div>
 			</div>
-			<HDivider />
+			<Separator orientation='vertical' />
 			<div className='flex flex-1 gap-5 px-4'>
 				{/* icon */}
 				<div className='text-orange-600'>
@@ -61,7 +60,7 @@ const DescriptionSection = () => (
 			<p className='flex-1'>
 				Total Bids : <span className='text-green-500'>97 Bids</span>
 			</p>
-			<HDivider></HDivider>
+			<Separator orientation='vertical' />
 			<p className='flex-1 px-4'>
 				Last Bid : <span className='text-green-500'>7 mins ago</span>
 			</p>
@@ -70,14 +69,14 @@ const DescriptionSection = () => (
 );
 const SubmitSection = () => {
 	return (
-		<div className='flex-1 py-5 text-center rounded-lg bg-slate-100'>
-			<p className='font-semibold text-accent'>Bidding ends in</p>
+		<div className='bg-slate-100 flex-1 py-5 text-center rounded-lg'>
+			<p className='text-accent font-semibold'>Bidding ends in</p>
 			<p className='tracking-wide text-red-400'>0d : 19h : 8m : 52s</p>
 			<div className='px-6 py-5'>
 				<p className='font-thin'>Bid Increment</p>
 				<h3 className='mt-3 text-3xl font-bold'>$3</h3>
 			</div>
-			<button className='py-4 font-semibold text-white bg-purple-600 rounded-full shadow-lg px-7 bg-gradient-to-b from-blue-700 to-blue-400 hover:from-blue-400 hover:to-blue-700 shadow-blue-800'>
+			<button className='px-7 bg-gradient-to-b from-blue-700 to-blue-400 hover:from-blue-400 hover:to-blue-700 shadow-blue-800 py-4 font-semibold text-white bg-purple-600 rounded-full shadow-lg'>
 				Submit a bid
 			</button>
 		</div>
@@ -86,7 +85,7 @@ const SubmitSection = () => {
 
 const Showcase = () => {
 	return (
-		<div className='flex flex-col gap-4 p-2 text-black rounded-lg shadow-lg md:flex-row'>
+		<div className='md:flex-row flex flex-col gap-4 p-2 text-black rounded-lg shadow-lg'>
 			<ProductImage />
 			<DescriptionSection />
 			<SubmitSection />
