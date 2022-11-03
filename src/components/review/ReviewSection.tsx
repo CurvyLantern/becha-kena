@@ -4,10 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/virtual';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 const array = new Array(10).fill(0, 1, 10);
 
-function ReviewSection() {
+function Slider() {
 	return (
 		<Swiper
 			breakpoints={{
@@ -22,7 +23,6 @@ function ReviewSection() {
 					spaceBetween: 40,
 				},
 			}}
-			loop
 			grabCursor
 			slidesPerView={1}
 			onSlideChange={() => console.log('slide change')}
@@ -36,6 +36,17 @@ function ReviewSection() {
 			})}
 		</Swiper>
 	);
+}
+
+function ReviewSection() {
+	const [component, setComponent] = useState(false);
+	useEffect(() => {
+		setComponent(true);
+	}, []);
+
+	if (!component) return null;
+
+	return <Slider />;
 }
 
 export default ReviewSection;
