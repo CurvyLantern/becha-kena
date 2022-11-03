@@ -56,7 +56,9 @@ const Home: NextPage = () => (
 				</div>
 			</div>
 		</Container>
-		<ReviewSection />
+		<Container>
+			<ReviewSection />
+		</Container>
 	</>
 );
 
