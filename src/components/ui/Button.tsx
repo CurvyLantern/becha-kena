@@ -12,11 +12,10 @@ const Button: React.FC<Props> = (props) => {
     const {buttonProps} = useButton(props, ref) 
     const {children} = props
     return (
-        <button {...buttonProps} className={props.className} ref={ref}>
-            {children}
-        </button>
-        <div>hahfff</div>
-    );
+			<button {...buttonProps} className={props.className} ref={ref}>
+				{children}
+			</button>
+		);
 }
 
 
